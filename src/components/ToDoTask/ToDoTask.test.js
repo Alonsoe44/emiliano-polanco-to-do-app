@@ -14,4 +14,17 @@ describe("Given a ToDoTask component", () => {
       expect(foundElement).toBeInTheDocument();
     });
   });
+  describe("When it's clicked", () => {
+    test("Then it should call the actionOnClick", () => {
+      const actionOnClick = jest.fn();
+      const taskText = "running";
+      render(<ToDoTask id={1} text={taskText} userChange={actionOnClick} />);
+
+      const foundElement = screen.getByRole("checkbox", { name: taskText });
+
+      userEvent.click(foundElement);
+
+      expect(actionOnClick).toHaveBeenCalled();
+    });
+  });
 });
