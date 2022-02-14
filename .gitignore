@@ -7,7 +7,8 @@
 
 # testing
 /coverage
-
+.coverage
+.scannerwork
 # production
 /build
 
