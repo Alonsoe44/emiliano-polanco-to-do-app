@@ -5,6 +5,7 @@ const ToDoTask = ({ text, done, id, userChange }) => {
     <li key={id}>
       <input
         type="checkbox"
+        name={text}
         checked={done}
         onChange={(e) => userChange(e.target.checked)}
         id={text}
