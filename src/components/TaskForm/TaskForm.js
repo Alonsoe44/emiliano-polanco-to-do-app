@@ -1,5 +1,5 @@
 import propTypes from "prop-types";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { addTaskThunk } from "../../redux/thunks/toDoTasksThunks";
 
