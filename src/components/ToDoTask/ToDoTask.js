@@ -1,13 +1,11 @@
-import PropTypes from "prop-types";
-
-const ToDoTask = ({ text, done, id, userChange }) => {
+const ToDoTask = ({ task: { text, done, id }, userChange }) => {
   return (
-    <li key={id}>
+    <li>
       <input
         type="checkbox"
         name={text}
         checked={done}
-        onChange={(e) => userChange(e.target.checked)}
+        onChange={(e) => userChange({ text: text, done: e.target.checked, id })}
         id={text}
       />
       <label htmlFor={text}>{text}</label>
@@ -15,15 +13,4 @@ const ToDoTask = ({ text, done, id, userChange }) => {
   );
 };
 
-ToDoTask.propTypes = {
-  text: PropTypes.string.isRequired,
-  done: PropTypes.bool,
-  id: PropTypes.number.isRequired,
-  userChange: PropTypes.func,
-};
-
-ToDoTask.defaultProps = {
-  done: false,
-  userChange: () => {},
-};
 export default ToDoTask;
