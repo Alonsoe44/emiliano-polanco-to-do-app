@@ -27,7 +27,7 @@ export const addTaskThunk = (task) => async (dispatch) => {
 
 export const updateTaskCheckThunk = (task) => async (dispatch) => {
   console.log(`${apiUrl}${task.id}`);
-  const response = await fetch(`${apiUrl}${task.id}`, {
+  await fetch(`${apiUrl}${task.id}`, {
     method: "PATCH",
     headers: {
       "Content-Type": "application/json",
